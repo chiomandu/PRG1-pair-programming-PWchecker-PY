@@ -1,6 +1,11 @@
 import datetime
-
+#checks for checking password log
+INPUT_FILE = "./common_passwords.txt"
 OUTPUT_FILE = "./checking_password_log.txt"
+
+
+
+
 
 def get_current_datetime_formatted():
     now = datetime.datetime.now()
@@ -20,6 +25,18 @@ def is_strong_password(password):
     has_lower = any(char.islower() for char in password)
     
     return has_upper and has_lower
+
+
+password=(input("Give me a password? : "))
+
+def is_common_password(password):
+     common_passwords_text= read_in_file(INPUT_FILE)
+     common_passwords_list=common_passwords_text.splitlines()
+     return password in common_passwords_list
+if is_common_password(password):
+         print("Too common")
+
+     
 
 
 def check_password(password):
