@@ -27,14 +27,16 @@ def is_strong_password(password):
     return has_upper and has_lower
 
 
-password=(input("Give me a password? : "))
+#password=(input("Give me a password? : "))
 
 def is_common_password(password):
-     common_passwords_text= read_in_file(INPUT_FILE)
-     common_passwords_list=common_passwords_text.splitlines()
-     return password in common_passwords_list
-if is_common_password(password):
-         print("Too common")
+    common_passwords_text= read_in_file(INPUT_FILE)
+    common_passwords_list=common_passwords_text.splitlines()
+    if (password in common_passwords_list):
+     print("Too common ")
+    else:
+        print("okay")
+   
 
      
 

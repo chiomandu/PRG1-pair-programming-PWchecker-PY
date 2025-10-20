@@ -1,6 +1,9 @@
 import random
 from random_word import RandomWords
 r = RandomWords()
+from checker import *
+INPUT_FILE = "./common_passwords.txt"
+OUTPUT_FILE = "./checking_password_log.txt"
 
 def length_checker():
     length = len(username)
@@ -48,6 +51,10 @@ def menu(option):
         case 4:
             username = input("What is your username: ")
             check_no_underscores(username)
+        case 5:
+            password= input("What is you password?: ")
+            is_common_password(password)
+
         case _:
             print("no")
 
